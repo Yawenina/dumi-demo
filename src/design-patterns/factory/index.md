@@ -73,7 +73,7 @@ import {
   AntdFactory,
   createLib,
 } from './abstract-antd-next';
-import '@alife/next/dist/next.css';
+import '@alifd/next/dist/next.css';
 const Antd = createLib(new AntdFactory());
 const Next = createLib(new NextFactory());
 
