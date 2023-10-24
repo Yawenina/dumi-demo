@@ -1,7 +1,8 @@
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
-  publicPath: '/dumi-demo',
+  base: process.env.NODE_ENV === 'production' ? `/dumi-demo/` : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? `/dumi-demo/` : '/',
   outputPath: 'docs-dist',
   themeConfig: {
     name: 'dumi-demo',
