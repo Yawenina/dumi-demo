@@ -86,3 +86,57 @@ export default function App() {
   );
 }
 ```
+
+### 3. 建造者模式（Builder Pattern）
+
+- 描述：构建与表现分离，**使用同样的构建过程创建不同的对象**, 或者 **通过不同的步骤创建不同的对象**。
+- 应用场景：构建步骤多，灵活选择构建步骤。感觉像是代工厂给你提供了一系列的流水线，你可以自由组装和定制各流水线。
+  ![Alt text](./image-1.png)
+- 代码实现：
+
+```jsx
+import { useState } from 'react';
+import { Space, Button } from 'antd';
+import { DesktopBuilder, LaptopBuilder, ComputerDirector } from './builder';
+
+const desktopBuilder = new DesktopBuilder();
+const laptopBuilder = new LaptopBuilder();
+const computerDirector = new ComputerDirector();
+
+export default function App() {
+  const [desktops, setDesktops] = useState([]);
+  const [laptops, setLaptops] = useState([]);
+
+  const createDesktop = () => {
+    const desktopBuilder = new DesktopBuilder();
+    computerDirector.construct(desktopBuilder);
+    setDesktops((prev) => [...prev, desktopBuilder.getComputer()]);
+  };
+
+  const createLaptop = () => {
+    const laptopBuilder = new LaptopBuilder();
+    computerDirector.construct(laptopBuilder);
+    setLaptops((prev) => [...prev, laptopBuilder.getComputer()]);
+  };
+  return (
+    <div>
+      <p>Desktop:</p>
+      <ul>
+        {desktops.map((item, idx) => (
+          <li key={idx}>{item.display()}</li>
+        ))}
+      </ul>
+      <p>Laptop:</p>
+      <ul>
+        {laptops.map((item, idx) => (
+          <li key={idx}>{item.display()}</li>
+        ))}
+      </ul>
+      <Space>
+        <Button onClick={createDesktop}>创建 Desktop</Button>
+        <Button onClick={createLaptop}>创建 Laptop</Button>
+      </Space>
+    </div>
+  );
+}
+```
