@@ -1,3 +1,10 @@
+本地部署查看
+
+```
+npm run docs:build
+npx lite-server --baseDir=docs-dist
+```
+
 # dumi-demo
 
 [![NPM version](https://img.shields.io/npm/v/dumi-demo.svg?style=flat)](https://npmjs.org/package/dumi-demo)
