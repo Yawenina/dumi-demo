@@ -8,6 +8,7 @@
   "files": [
     "dist"
   ],
+  "homepage": "https://yawenina.github.io/dumi-demo",
   "scripts": {
     "build": "father build",
     "build:watch": "father dev",
