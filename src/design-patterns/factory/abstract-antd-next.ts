@@ -1,4 +1,4 @@
-import { Button as FusionButton } from '@alife/next';
+import { Button as FusionButton } from '@alifd/next';
 import { Button, ButtonProps } from 'antd';
 import { CompoundedComponent } from 'antd/es/float-button/interface';
 import { RefAttributes } from 'react';
