@@ -1,6 +1,6 @@
 ---
 nav:
-  title: Design Patterns
+  title: 设计模式
   order: 1
 ---
 

@@ -12,6 +12,7 @@ export default defineConfig({
       { type: 'component', dir: 'src/components' },
       { type: 'hook', dir: 'src/hooks' },
       { type: 'design-patterns', dir: 'src/design-patterns' },
+      { type: 'performance', dir: 'src/performance' },
     ],
   },
 });

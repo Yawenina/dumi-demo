@@ -3,6 +3,7 @@ nav: Hooks
 ---
 
 # useLocalStorageState
+
 虽然每次 `count` 更新都会执行 `useLocalStorageState`, 但是初始化函数只会执行一次, 所以当 `defaultValue`是动态变量时，仍然只会以第一次传入的值为准，不会动态变更。查看 `Console`。
 
 ```jsx
